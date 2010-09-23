@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAwesomeAuth", "OAwesomeAuth.csproj", "{C4E14089-F5A4-46A8-B92D-60B43D020AED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4E14089-F5A4-46A8-B92D-60B43D020AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E14089-F5A4-46A8-B92D-60B43D020AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E14089-F5A4-46A8-B92D-60B43D020AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E14089-F5A4-46A8-B92D-60B43D020AED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = OAwesomeAuth.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.FileWidth = 120
+		$1.TabWidth = 2
+		$1.RemoveTrailingWhitespace = True
+		$1.inheritsSet = VisualStudio
+		$1.inheritsScope = text/plain
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="OAuthConsumer.cs" ctype="Workbench">
+    <Files>
+      <File FileName="AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="OAuthProperties.cs" Line="94" Column="37" />
+      <File FileName="Extensions/SortedDictionaryExtensions.cs" Line="34" Column="1" />
+      <File FileName="Extensions/StringExtensions.cs" Line="19" Column="28" />
+      <File FileName="Test/StringExtensions.cs" Line="30" Column="4" />
+      <File FileName="Test/AuthProperties.cs" Line="10" Column="24" />
+      <File FileName="Extensions/NameValueCollectionExtensions.cs" Line="26" Column="5" />
+      <File FileName="OAuthConsumer.cs" Line="16" Column="7" />
+      <File FileName="Test/AuthConsumer.cs" Line="18" Column="1" />
+      <File FileName="OAuthRepository.cs" Line="15" Column="1" />
+      <File FileName="IOAuthRepository.cs" Line="6" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="OAwesomeAuth" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Enum" expanded="True" />
+            <Node name="Extensions" expanded="True" />
+            <Node name="Test" expanded="True" />
+            <Node name="OAuthConsumer.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
+</Properties>
