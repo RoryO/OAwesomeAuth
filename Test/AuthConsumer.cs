@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using Moq;
 using NUnit.Framework;
 using NUnit.Framework.SyntaxHelpers;
@@ -21,10 +22,9 @@ namespace OAwesomeAuth
     public void GetRequestToken()
     {
       var mock = new Mock<IDispatcher>();
-      mock.Setup(foo => foo.Exec( "http://clownpenis.fart" ))
-        .Returns("oauth_token=token&oauth_secret=secret");
-      
-      OAuthConsumer c = new OAuthConsumer();
+      mock.Setup(foo =>foo.GetText( new WebClient() ) )
+        .Returns("oauth_token=\"token\"");
+      OAuthConsumer c = new OAuthConsumer(mock.Object);
       c.GetRequestToken();
       Assert.That(c.AuthProperties.Token, Is.EqualTo("token"));
     }

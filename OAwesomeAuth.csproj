@@ -42,6 +42,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>External\Moq\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="IDispatcher.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="Enum\RequestMethod.cs" />
+    <Compile Include="Test\Encryptor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -71,5 +73,6 @@
     <None Include="External\Moq\Moq.dll" />
     <None Include="External\Moq\Moq.pdb" />
     <None Include="External\Moq\Moq.xml" />
+    <None Include="LICENSE.txt" />
   </ItemGroup>
 </Project>

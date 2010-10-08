@@ -1,19 +1,28 @@
 using System;
+using System.IO;
 using System.Net;
+using System.Drawing;
+
 namespace OAwesomeAuth
 {
   public class Dispatcher : IDispatcher
   {
-    WebClient client;
-
-    public Dispatcher()
+    public String GetText(WebClient c)
     {
-      client = new WebClient();
+      return c.DownloadString(c.BaseAddress);
     }
 
-    public String Exec (String url)
+    public Image GetImage(WebClient c)
     {
-      return String.Empty;
+      Stream s = c.OpenRead("http://clownpenis.fart");
+      Image i = Image.FromStream(s);
+      return i;
+    }
+
+    public Byte[] GetData(WebClient c)
+    {
+      Byte[] b = new Byte[1];
+      return b;
     }
   }
 }

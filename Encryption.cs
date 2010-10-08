@@ -9,12 +9,12 @@ namespace OAwesomeAuth
 {
   public class Encryption
   {
-    public static String SignRequest(String hashLine, String consumerSecret, String tokenSecret, SignatureMethod method)
+    public static String SignRequest(String hashLine, OAuthProperties p)
     {
-      String feeder = String.Format ("{0}&{1}", consumerSecret, tokenSecret);
+      String feeder = String.Format ("{0}&{1}", p.ConsumerSecret, p.TokenSecret);
       String final = String.Empty;
       byte[] feederBytes = Encoding.UTF8.GetBytes (feeder);
-      switch(method){
+      switch(p.SignatureMethod){
       case(SignatureMethod.HmacSha1):
         HMACSHA1 hashEncoder = new HMACSHA1 (feederBytes);
         byte[] lineHashBytes = Encoding.UTF8.GetBytes (hashLine);
@@ -24,7 +24,7 @@ namespace OAwesomeAuth
       }
       return final.EncodeRfc();
     }
-
+    
     public static String GenerateNonce()
     {
       List<byte> allowedChars = new List<byte> (62);

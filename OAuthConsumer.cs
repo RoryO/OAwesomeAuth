@@ -19,41 +19,52 @@ namespace OAwesomeAuth
     private String _hashLine;
     public String HashLine { get { return _hashLine; } }
 
-    private IDispatcher dispatcher;
+    private IDispatcher _dispatcher;
 
     public OAuthConsumer ()
     {
       AuthProperties = new OAuthProperties();
       AuthRequestMethod = RequestMethod.Header;
       HttpMethod = HttpAction.GET;
+      _dispatcher = new Dispatcher();
     }
 
-    public OAuthConsumer(IDispatcher d)
+    public OAuthConsumer(IDispatcher d) : this()
     {
-      dispatcher = d;
+      _dispatcher = d;
     }
 
     public void GetRequestToken()
     {
-      StampTime();
       GenerateHashLine(RequestTokenUrl, AuthProperties.ToNameValueCollection(), null, null);
-      AuthProperties.Nonce = Encryption.GenerateNonce();
-      BuildRequest();
+      WebClient c = BuildRequest(RequestTokenUrl);
+      String r = _dispatcher.GetText(c);
     }
 
-    private void BuildRequest()
+    private WebClient BuildRequest(String url, NameValueCollection post)
     {
-      //SignRequest();
+      WebClient c = new WebClient();
+      Uri uri = new Uri(url);
+      StampTime();
+      AuthProperties.Nonce = Encryption.GenerateNonce();
+      GenerateHashLine(url, AuthProperties.ToNameValueCollection(), null , post);
+      AuthProperties.Signature = Encryption.SignRequest(_hashLine, AuthProperties);
       switch (AuthRequestMethod) {
       case(RequestMethod.Header):
-        WebHeaderCollection headers = new WebHeaderCollection();
-        headers["Authorization"] = String.Format("{0}, {1}={2}", AuthProperties.ToHeaders(), "oauth_signature", "fart");
+        c.Headers["Authorization"] = String.Format("OAuth {0}, {1}={2}", AuthProperties.ToHeaders(), "oauth_signature", "fart");
         break;
       case(RequestMethod.Query):
         break;
       case(RequestMethod.Form):
         break;
       }
+
+      return c;
+    }
+
+    private WebClient BuildRequest(String url)
+    {
+      return BuildRequest(url, null);
     }
 
     private void StampTime()
